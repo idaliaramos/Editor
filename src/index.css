@@ -9,11 +9,11 @@ body {
   height: 100%;
 }
 .EditorPageLayout-sideBar {
-  border-right: 1px solid silver;
+  /*border-right: 1px solid silver;*/
   margin-right: 20px;
   box-sizing: border-box;
   padding: 15px;
-  width: 20%
+  width: 20%;
 }
 .Editor-titleInput {
   padding: 10px;
