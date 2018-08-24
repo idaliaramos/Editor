@@ -3,3 +3,35 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+/*.Editor-Page {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+}*/
+.Editor-titleInput {
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+}
+.Editor-bodyInput {
+  padding: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  width: 100%;
+  border-color: 1px solid gray;
+  margin-bottom: 10px;
+  font-family: monospace;
+  height: 300px;
+}
+.Editor-saveButton {
+  border: 0;
+  border-radius: 5px;
+  padding: 10px 30px;
+  font-size: 12px;
+  background-color: #42aaf4;
+  color: white;
+  text-transform: uppercase;
+}
