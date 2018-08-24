@@ -1,15 +1,17 @@
-import React, { Component } from "react";
-//this renders a single document
-export default class DocumentItem extends Component {
-  render() {
-    const { document } = this.props;
-    console.log(document, "document");
-    console.log(Object.keys(document), "doc in item");
-    return (
-      <div>
-        <div>{Object.keys(document)}</div>
-        <div>{document.owner}</div>
-      </div>
-    );
-  }
-}
+import React from "react";
+import { List } from "semantic-ui-react";
+
+const DocumentItem = () => (
+  
+  <List divided relaxed>
+    <List.Item>
+      <List.Icon name="github" size="large" verticalAlign="middle" />
+      <List.Content>
+        <List.Header as="a">Semantic-Org/Semantic-UI</List.Header>
+        <List.Description as="a">Updated 10 mins ago</List.Description>
+      </List.Content>
+    </List.Item>
+  </List>
+);
+
+export default DocumentItem;
