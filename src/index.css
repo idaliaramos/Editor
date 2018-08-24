@@ -6,14 +6,15 @@ body {
 .EditorPageLayout {
   margin-top: 20px;
   display: flex;
-  height: 100%;
+  justify-content: flex-start;
+  /*height: 100%;*/
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .EditorPageLayout-sideBar {
-  /*border-right: 1px solid silver;*/
-  margin-right: 20px;
-  box-sizing: border-box;
-  padding: 15px;
-  width: 20%;
+  /*box-sizing: border-box;*/
+  padding: 25px;
+  flex: 2;
 }
 .Editor-titleInput {
   padding: 10px;
@@ -24,7 +25,10 @@ body {
   margin-bottom: 10px;
 }
 .Editor {
-  flex: 0.98;
+  flex: 5;
+  min-width: 70%;
+  padding: 10px;
+  margin-right: 40px;
 }
 .Editor-bodyInput {
   padding: 10px;
