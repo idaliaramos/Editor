@@ -2,7 +2,6 @@ import React from "react";
 import { List } from "semantic-ui-react";
 
 const DocumentItem = () => (
-  
   <List divided relaxed>
     <List.Item>
       <List.Icon name="github" size="large" verticalAlign="middle" />

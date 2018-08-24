@@ -4,7 +4,7 @@ body {
   font-family: sans-serif;
 }
 .EditorPageLayout {
-  margin-top:20px;
+  margin-top: 20px;
   display: flex;
   height: 100%;
 }
@@ -13,6 +13,7 @@ body {
   margin-right: 20px;
   box-sizing: border-box;
   padding: 15px;
+  width: 20%
 }
 .Editor-titleInput {
   padding: 10px;

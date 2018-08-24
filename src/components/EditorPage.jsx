@@ -5,10 +5,11 @@ import EditorPageLayout from "./EditorPageLayout";
 //this renders a single document
 export default class EditorPage extends Component {
   render() {
+    let { documents } = this.props;
     return (
       <div className="Editor-Page">
         <EditorPageLayout>
-          <DocumentListComponent />
+          <DocumentListComponent documents={documents} />
           <EditorComponent />
         </EditorPageLayout>
       </div>
