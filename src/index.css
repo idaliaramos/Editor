@@ -3,11 +3,16 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-/*.Editor-Page {
-  background-color: red;
+.EditorPageLayout {
   display: flex;
-  flex-direction: row;
-}*/
+  height: 100%;
+}
+.EditorPageLayout-sideBar {
+  border-right: 1px solid silver;
+  margin-right: 20px;
+  box-sizing: border-box;
+  padding: 15px;
+}
 .Editor-titleInput {
   padding: 10px;
   font-size: 16px;
@@ -15,6 +20,9 @@ body {
   width: 100%;
   border: 1px solid gray;
   margin-bottom: 10px;
+}
+.Editor {
+  flex: 0.98;
 }
 .Editor-bodyInput {
   padding: 10px;
