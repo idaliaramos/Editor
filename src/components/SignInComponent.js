@@ -1,17 +1,15 @@
 import React, { Component } from "react";
 import { Button, Form, Segment } from "semantic-ui-react";
-
+//SignInComponent takes in the name of the user and saves it to localStorage
 export default class SignInComponent extends Component {
-  state = {
-    name: ""
-  };
+  //onSubmitName sets the name to local storage
   onSubmitName = event => {
     event.preventDefault();
-    this.setState({ name: event.target.value });
-    localStorage.setItem("name", this.state.name);
+    localStorage.setItem("name", event.target.value);
   };
+
+  //renders a form with a single input field for the name
   render() {
-    console.log(this.state, "state");
     return (
       <Segment inverted>
         <Form inverted onChange={this.onSubmitName}>
