@@ -20,7 +20,6 @@ class App extends Component {
     }
   };
   render() {
-    console.log(this.state.documents)
     return (
       <div className="App">
         <SignInComponent />

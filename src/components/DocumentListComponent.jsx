@@ -11,10 +11,12 @@ export default class DocumentList extends Component {
     const { documents } = this.props;
 
     let documentArray = [];
-    let transform = Object.entries(documents).forEach(([documentName, value]) =>
-      documentArray.push({ documentName: value })
-    );
-
+    let transform = Object.entries(documents).forEach(([name, value]) => {
+      console.log(name, "NAME ");
+      console.log(value, " VALUE");
+      // documentArray.push({ name: value });
+    });
+    console.log(Object.values(documents));
     //documents will be passed in as props, for each document it will create a
     //document Item
     return (
@@ -22,7 +24,7 @@ export default class DocumentList extends Component {
         {documentArray.length === 0 ? (
           <p className="">No notes availabe at this time.</p>
         ) : (
-          documentArray.map(document => <DocumentItem document={document}/>)
+          documentArray.map(document => <DocumentItem document={document} />)
         )}
       </div>
     );
