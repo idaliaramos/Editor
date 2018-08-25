@@ -1,83 +1,6 @@
-// import React, { Component } from "react";
-//
-// export default class EditorPageLayout extends Component {
-//   render() {
-//     const { children } = this.props;
-//     return (
-//       <div className="EditorPageLayout">
-//         <div className="EditorPageLayout-sideBar">{children[0]}</div>
-//         <div className="Editor">{children[1]}</div>
-//       </div>
-//     );
-//   }
-// }
-
-//layout 2
-// import React, { Component } from "react";
-// import photo from "../images/scientist.png";
-// import {
-//   Button,
-//   Header,
-//   Icon,
-//   Image,
-//   Menu,
-//   Segment,
-//   Sidebar,
-//   List
-// } from "semantic-ui-react";
-//
-// export default class EditorPageLayout extends Component {
-//   state = { visible: false };
-//
-//   handleButtonClick = () => {
-//     this.setState({ visible: !this.state.visible });
-//   };
-//
-//   handleSidebarHide = () => this.setState({ visible: false });
-//
-//   render() {
-//     const { visible } = this.state;
-//
-//     const { children } = this.props;
-//     return (
-//       <div>
-//         <Sidebar.Pushable as={Segment}>
-//           <Sidebar
-//             as={Menu}
-//             animation="overlay"
-//             direction="right"
-//             vertical
-//             visible={visible}
-//           >
-//             <Menu.Item as="a" header>
-//               Owners
-//             </Menu.Item>
-//             <List.Item>
-//               <Image avatar src={photo} />
-//               <List.Header>Christian Rocha</List.Header>
-//               Admin
-//             </List.Item>
-//             <Menu.Item as="a">Idalia</Menu.Item>
-//             <Menu.Item as="a">Brady</Menu.Item>
-//             <Menu.Item as="a">Nik</Menu.Item>
-//             <Menu.Item as="a">Monsoor</Menu.Item>
-//           </Sidebar>
-//           <Sidebar.Pusher dimmed={visible}>
-//             <Segment basic>
-//               <div className="EditorPageLayout">
-//                 <div className="EditorPageLayout-sideBar">{children[0]}</div>
-//                 <div className="Editor">{children[1]}</div>
-//               </div>
-//             </Segment>
-//           </Sidebar.Pusher>
-//         </Sidebar.Pushable>
-//       </div>
-//     );
-//   }
-// }
-
 import React, { Component } from "react";
 import OwnerListComponent from "./OwnerListComponent";
+import DocumentListComponent from "./DocumentListComponent";
 import {
   Button,
   Header,
@@ -89,7 +12,7 @@ import {
   List
 } from "semantic-ui-react";
 
-export default class SidebarExampleSidebar extends Component {
+export default class EditorPageLayout extends Component {
   state = {
     visible: false,
     visible2: false,
@@ -110,8 +33,10 @@ export default class SidebarExampleSidebar extends Component {
     const { children } = this.props;
     return (
       <div>
-        <Button onClick={this.handleButtonClick}>Owners</Button>
-        <Button onClick={this.handleButtonClick2}>Documents</Button>
+        <Button onClick={this.handleButtonClick}>Documents</Button>
+
+        <Button onClick={this.handleButtonClick2}>Owners</Button>
+
         <Sidebar.Pushable as={Segment}>
           <Sidebar
             as={Menu}
@@ -122,17 +47,8 @@ export default class SidebarExampleSidebar extends Component {
             visible={visible}
             width="thin"
           >
-            <Menu.Item as="a" header>
-              Owners
-            </Menu.Item>
-            <List.Item>
-              <List.Header>Christian Rocha</List.Header>
-              Admin
-            </List.Item>
-            <Menu.Item as="a">Idalia</Menu.Item>
-            <Menu.Item as="a">Brady</Menu.Item>
-            <Menu.Item as="a">Nik</Menu.Item>
-            <Menu.Item as="a">Monsoor</Menu.Item>
+            {/* Documents */}
+            <DocumentListComponent />
           </Sidebar>
 
           <Sidebar
@@ -154,7 +70,7 @@ export default class SidebarExampleSidebar extends Component {
             <Segment basic>
               {/* <Header as="h3">Application Content</Header> */}
               <div className="EditorPageLayout">
-                <div className="EditorPageLayout-sideBar">{children[0]}</div>
+                {/* <div className="EditorPageLayout-sideBar">{children[0]}</div> */}
                 <div className="Editor">{children[1]}</div>
               </div>
             </Segment>
