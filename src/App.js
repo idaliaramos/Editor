@@ -10,7 +10,7 @@ class App extends Component {
       doc1: {
         owners: ["<user>", "<user>"],
         lastChangeBy: " <user>",
-        content: "<content>"
+        content: "What is the difference between..."
       },
       doc2: {
         owners: ["idalia", "michael"],

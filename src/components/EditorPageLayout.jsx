@@ -19,15 +19,17 @@ export default class EditorPageLayout extends Component {
     visible2: false,
     currentMessage: {}
   };
-
+  //when user clicks it will open the document side bar
   handleButtonClick = () => this.setState({ visible: !this.state.visible });
-  handleButtonClick2 = () => this.setState({ visible2: !this.state.visible2 });
+  // this will close the document side bar
   handleSidebarHide = () => this.setState({ visible: false });
+  // when user clicks it will open the owners side bar
   handleSidebarHide2 = () => this.setState({ visible2: false });
+  // this will close the  owner side bar
+  handleButtonClick2 = () => this.setState({ visible2: !this.state.visible2 });
   updateCurrentDoc = event => {
+    console.log(event.target, "EV");
     event.preventDefault();
-    console.log("i am the event", event.target);
-    console.log("value", event.target.value);
   };
   render() {
     const { visible, visible2 } = this.state;
@@ -65,7 +67,10 @@ export default class EditorPageLayout extends Component {
             width="thin"
           >
             {/* Documents */}
-            <DocumentListComponent />
+            <DocumentListComponent
+              updateCurrentDoc={this.updateCurrentDoc}
+              documents={this.props.documents}
+            />
           </Sidebar>
 
           <Sidebar

@@ -6,10 +6,11 @@ import EditorPageLayout from "./EditorPageLayout";
 export default class EditorPage extends Component {
   render() {
     let { documents } = this.props;
+
     return (
       <div className="Editor-Page">
-        <EditorPageLayout>
-          <DocumentListComponent documents={documents} />
+        <EditorPageLayout documents={documents}>
+          <DocumentListComponent />
           <EditorComponent />
         </EditorPageLayout>
       </div>
