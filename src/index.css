@@ -3,6 +3,11 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+.Editor-wrapper {
+  box-shadow: 4px 4px 4px 1px #d4d7db;
+  border: 0.75px solid #d4d7db;
+  border-radius: 4px;
+}
 .EditorPageLayout {
   margin-top: 20px;
   display: flex;
@@ -25,19 +30,23 @@ body {
   box-shadow: 4px 4px 4px 1px #d4d7db;
   border: 0.75px solid #d4d7db;
   border-radius: 4px;
-  padding: 10px;
-  font-size: 16px;
+  padding: 20px;
+  font-size: 26px;
   box-sizing: border-box;
   width: 100%;
-
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
+  border: none;
+}
+input[type="text"] {
+  color: blue;
+  size: 20px;
 }
 
 .Editor-bodyInput {
-  /*box-shadow: 2px 1px 2px 1px blue;*/
   box-shadow: 4px 4px 4px 1px #d4d7db;
-  border: 0.75px solid #d4d7db;
+  */border: 0.75px solid #d4d7db;
   border-radius: 4px;
+  border: none;
   padding: 10px;
   font-size: 16px;
   /*box-sizing: border-box;*/
@@ -45,7 +54,6 @@ body {
   */margin-bottom: 10px;
   font-family: monospace;
   height: 400px;
-
 }
 .Editor-saveButton {
   border: 0;
@@ -55,5 +63,7 @@ body {
   background-color: #42aaf4;
   color: white;
   text-transform: uppercase;
-
+}
+.Changed-by-wrapper {
+text-align: right;
 }

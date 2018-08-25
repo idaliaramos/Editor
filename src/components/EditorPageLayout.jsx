@@ -77,6 +77,7 @@
 // }
 
 import React, { Component } from "react";
+import OwnerListComponent from "./OwnerListComponent";
 import {
   Button,
   Header,
@@ -144,36 +145,14 @@ export default class SidebarExampleSidebar extends Component {
             visible={visible2}
             width="thin"
             onClick={this.updateCurrentDoc}
+            direction="right"
           >
-            <Menu.Item as="a" id="3453">
-              <Icon name="home" />
-              idalia
-            </Menu.Item>
-            <Menu.Item as="a">
-              <Icon name="gamepad" />
-              ramos
-            </Menu.Item>
-            <Menu.Item as="a">
-              <Icon name="camera" />
-              software
-            </Menu.Item>
-            <Menu.Item as="a">
-              <Icon name="camera" />
-              software
-            </Menu.Item>
-            <Menu.Item as="a">
-              <Icon name="camera" />
-              software
-            </Menu.Item>
-            <Menu.Item as="a">
-              <Icon name="camera" />
-              software
-            </Menu.Item>
+            <OwnerListComponent />
           </Sidebar>
 
           <Sidebar.Pusher>
             <Segment basic>
-              <Header as="h3">Application Content</Header>
+              {/* <Header as="h3">Application Content</Header> */}
               <div className="EditorPageLayout">
                 <div className="EditorPageLayout-sideBar">{children[0]}</div>
                 <div className="Editor">{children[1]}</div>
