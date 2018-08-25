@@ -14,6 +14,7 @@ export default class EditorComponent extends Component {
 
   render() {
     console.log(this.state);
+    let { document, currentDocument } = this.props;
     return (
       <div>
         <form className="Editor" onSubmit={this._handleSubmit}>
@@ -23,7 +24,9 @@ export default class EditorComponent extends Component {
               <List.Item>
                 <Image avatar src={image} />
                 <List.Content>
-                  <List.Header as="a">Daniel Louise</List.Header>
+                  <List.Header as="a">
+                    {currentDocument.lastChangeBy}
+                  </List.Header>
                 </List.Content>
               </List.Item>
             </List>

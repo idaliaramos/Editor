@@ -17,6 +17,11 @@ class App extends Component {
         lastChangeBy: "brady",
         content: "hello i am content"
       }
+    },
+    currentDocument: {
+      owners: ["idalia", "jean"],
+      lastChangeBy: " Moth",
+      content: "This is a test doc"
     }
   };
   render() {
@@ -24,7 +29,10 @@ class App extends Component {
       <div className="App">
         <NavBar />
         {/* <SignInComponent /> */}
-        <EditorPage documents={this.state.documents} />
+        <EditorPage
+          documents={this.state.documents}
+          currentDocument={this.state.currentDocument}
+        />
       </div>
     );
   }
