@@ -67,3 +67,15 @@ input[type="text"] {
 .Changed-by-wrapper {
   text-align: right;
 }
+.Content-Buttons {
+  display: inline;
+  float: left;
+  max-width: 18%;
+}
+.button.ui.button.Button-Right {
+  margin-bottom: 30px;
+}
+/*.Content-Buttons .Button-Right {
+  display: inline-block;
+  float: left;
+}*/

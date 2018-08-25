@@ -9,7 +9,8 @@ import {
   Menu,
   Segment,
   Sidebar,
-  List
+  List,
+  Popup
 } from "semantic-ui-react";
 
 export default class EditorPageLayout extends Component {
@@ -33,10 +34,26 @@ export default class EditorPageLayout extends Component {
     const { children } = this.props;
     return (
       <div>
-        <Button onClick={this.handleButtonClick}>Documents</Button>
-
-        <Button onClick={this.handleButtonClick2}>Owners</Button>
-
+        <div className="Content-Buttons">
+          <Button className="Button-Right" onClick={this.handleButtonClick}>
+            Documents
+          </Button>
+          <Popup
+            trigger={
+              <Button
+                className="Button-Left"
+                icon
+                size="large"
+                onClick={this.handleButtonClick2}
+              >
+                <Icon name="group" />
+              </Button>
+            }
+            content="Show all owners"
+            on="click"
+            on="hover"
+          />
+        </div>
         <Sidebar.Pushable as={Segment}>
           <Sidebar
             as={Menu}
