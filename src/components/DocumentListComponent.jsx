@@ -21,12 +21,18 @@ export default class DocumentListComponent extends Component {
 
     return (
       //updateCurrentDoc will be called to set the state with the current doc
-      <div className="Document-List" onClick={this.props.updateCurrentDoc}>
+      <div className="Document-List">
         {listOfDocs.length === 0 ? (
           <p className="">No notes availabe at this time.</p>
         ) : (
           listOfDocs.map(document => {
-            return <DocumentItem document={document} key={document.id} />;
+            return (
+              <DocumentItem
+                document={document}
+                key={document.name}
+                updateCurrentDoc={this.props.updateCurrentDoc}
+              />
+            );
           })
         )}
       </div>

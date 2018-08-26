@@ -48,7 +48,7 @@ export default class EditorComponent extends Component {
             <textarea
               className="Editor-bodyInput"
               name="bodyInput"
-              placeholder="Type your doc here..."
+              placeholder={currentDocument.content}
               value={this.state.body || ""}
               onChange={event => {
                 this.setState({ body: event.target.value });

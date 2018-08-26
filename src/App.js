@@ -27,16 +27,9 @@ class App extends Component {
     }
   };
 
-  updateCurrentDoc = event => {
-    event.preventDefault();
-
-//update state to current document be the one that has the name
-// this.setState
-    console.log(
-      event.target,
-      "i am in the update curent doc app"
-    );
-
+  updateCurrentDoc = current => {
+    let currentDoc = this.state.documents[current];
+    this.setState({ currentDocument: currentDoc });
   };
   render() {
     return (
