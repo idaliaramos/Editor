@@ -83,7 +83,7 @@ export default class EditorPageLayout extends Component {
             visible={visible2}
             width="thin"
             onClick={this.updateCurrentDoc}
-            direction="right"
+            
           >
             <OwnerListComponent currentDocument={currentDocument} />
           </Sidebar>
