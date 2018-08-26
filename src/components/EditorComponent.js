@@ -13,7 +13,7 @@ export default class EditorComponent extends Component {
   }
 
   render() {
-    console.log(this.state);
+    console.log(this.props.currentDocument, "current");
     let { document, currentDocument } = this.props;
     return (
       <div>
@@ -36,7 +36,7 @@ export default class EditorComponent extends Component {
               className="Editor-titleInput"
               type="text"
               name="titleInput"
-              placeholder="Give your doc a title..."
+              placeholder={currentDocument.name}
               value={this.state.title || ""}
               onChange={event => {
                 this.setState({ title: event.target.value });

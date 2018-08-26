@@ -4,15 +4,15 @@ import EditorComponent from "./EditorComponent";
 import EditorPageLayout from "./EditorPageLayout";
 //this renders a single document
 export default class EditorPage extends Component {
-  state = {
-    currentDocument: {}
-  };
   render() {
-    let { documents, currentDocument } = this.props;
+    let { documents, currentDocument, updateCurrentDoc } = this.props;
 
     return (
       <div className="Editor-Page">
-        <EditorPageLayout documents={documents}>
+        <EditorPageLayout
+          documents={documents}
+          updateCurrentDoc={updateCurrentDoc}
+        >
           <DocumentListComponent />
           <EditorComponent
             documents={documents}

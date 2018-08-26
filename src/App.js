@@ -21,8 +21,22 @@ class App extends Component {
     currentDocument: {
       owners: ["idalia", "jean"],
       lastChangeBy: " Moth",
-      content: "This is a test doc"
+      content: "This is a test doc",
+      name: "Document x",
+      id: 1
     }
+  };
+
+  updateCurrentDoc = event => {
+    event.preventDefault();
+
+//update state to current document be the one that has the name
+// this.setState
+    console.log(
+      event.target,
+      "i am in the update curent doc app"
+    );
+
   };
   render() {
     return (
@@ -32,6 +46,7 @@ class App extends Component {
         <EditorPage
           documents={this.state.documents}
           currentDocument={this.state.currentDocument}
+          updateCurrentDoc={this.updateCurrentDoc}
         />
       </div>
     );

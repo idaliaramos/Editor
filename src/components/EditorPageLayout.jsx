@@ -27,13 +27,13 @@ export default class EditorPageLayout extends Component {
   handleSidebarHide2 = () => this.setState({ visible2: false });
   // this will close the  owner side bar
   handleButtonClick2 = () => this.setState({ visible2: !this.state.visible2 });
-  updateCurrentDoc = event => {
-    console.log(event.target, "EV");
-    event.preventDefault();
-  };
+  // updateCurrentDoc = event => {
+  //   console.log(event.target, "EV");
+  //   event.preventDefault();
+  // };
   render() {
     const { visible, visible2 } = this.state;
-    const { children } = this.props;
+    const { children, updateCurrentDoc } = this.props;
     return (
       <div>
         <div className="Content-Buttons">
@@ -68,7 +68,7 @@ export default class EditorPageLayout extends Component {
           >
             {/* Documents */}
             <DocumentListComponent
-              updateCurrentDoc={this.updateCurrentDoc}
+              updateCurrentDoc={updateCurrentDoc}
               documents={this.props.documents}
             />
           </Sidebar>
