@@ -19,16 +19,17 @@ class App extends Component {
       }
     },
     currentDocument: {
-      owners: ["idalia", "jean"],
+      owners: ["idalia", "jean", ],
       lastChangeBy: " Moth",
       content: "This is a test doc",
       name: "Document x",
       id: 1
     }
   };
-
-  updateCurrentDoc = current => {
-    let currentDoc = this.state.documents[current];
+  //gets called when user clicks on a document, updates state with current document
+  updateCurrentDoc = selectedName => {
+    //looks in the documents to find document by name
+    let currentDoc = this.state.documents[selectedName];
     this.setState({ currentDocument: currentDoc });
   };
   render() {
@@ -37,6 +38,7 @@ class App extends Component {
         <NavBar />
         {/* <SignInComponent /> */}
         <EditorPage
+          currentDocument={this.state.currenDocument}
           documents={this.state.documents}
           currentDocument={this.state.currentDocument}
           updateCurrentDoc={this.updateCurrentDoc}

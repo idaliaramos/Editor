@@ -12,6 +12,7 @@ export default class EditorPage extends Component {
         <EditorPageLayout
           documents={documents}
           updateCurrentDoc={updateCurrentDoc}
+          currentDocument={currentDocument}
         >
           <DocumentListComponent />
           <EditorComponent

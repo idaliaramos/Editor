@@ -33,7 +33,7 @@ export default class EditorPageLayout extends Component {
   // };
   render() {
     const { visible, visible2 } = this.state;
-    const { children, updateCurrentDoc } = this.props;
+    const { children, updateCurrentDoc, currentDocument } = this.props;
     return (
       <div>
         <div className="Content-Buttons">
@@ -85,7 +85,7 @@ export default class EditorPageLayout extends Component {
             onClick={this.updateCurrentDoc}
             direction="right"
           >
-            <OwnerListComponent />
+            <OwnerListComponent currentDocument={currentDocument} />
           </Sidebar>
 
           <Sidebar.Pusher>
