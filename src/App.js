@@ -30,7 +30,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state, "state");
     return (
       <div className="App">
         <NavBar />

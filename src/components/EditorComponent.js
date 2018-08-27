@@ -13,35 +13,36 @@ export default class EditorComponent extends Component {
   }
 
   render() {
-    console.log(this.props.currentDocument, "current");
     let { document, currentDocument } = this.props;
     return (
       <div>
         <form className="Editor" onSubmit={this._handleSubmit}>
-          <div className="Changed-by-wrapper">
-            <div>Last Changed by:</div>
-            <List horizontal relaxed="very">
-              <List.Item>
-                <Image avatar src={image} />
-                <List.Content>
-                  <List.Header as="a">
-                    {currentDocument.lastChangeBy}
-                  </List.Header>
-                </List.Content>
-              </List.Item>
-            </List>
-          </div>
           <div className="Editor-titleInputWrapper">
-            <input
-              className="Editor-titleInput"
-              type="text"
-              name="titleInput"
-              placeholder={currentDocument.name}
-              value={this.state.title || ""}
-              onChange={event => {
-                this.setState({ title: event.target.value });
-              }}
-            />
+            <div>
+              <input
+                className="Editor-titleInput"
+                type="text"
+                name="titleInput"
+                placeholder={currentDocument.name}
+                value={this.state.title || ""}
+                onChange={event => {
+                  this.setState({ title: event.target.value });
+                }}
+              />
+            </div>
+            <div className="Changed-by-wrapper">
+              <div>Last Changed by:</div>
+              <List horizontal relaxed="very">
+                <List.Item>
+                  <Image avatar src={image} />
+                  <List.Content>
+                    <List.Header as="a">
+                      {currentDocument.lastChangeBy}
+                    </List.Header>
+                  </List.Content>
+                </List.Item>
+              </List>
+            </div>
           </div>
 
           <div className="Editor-bodyInputWrapper">
@@ -67,7 +68,15 @@ export default class EditorComponent extends Component {
   //handle submit will take the information and
   _handleSubmit = event => {
     event.preventDefault();
-    let docInfo = this.state;
+    // let user = localStorage.getItem("name");
+    let user = "idalia";
+    let content = this.state.body;
+    console.log(this.state.body, "this state body");
+    let docInfo = {
+      issuer: user,
+      content: content
+    };
+    console.log(docInfo, "docInfo");
     //onSave will call the api with the info
     // onSave(docInfo);
   };
