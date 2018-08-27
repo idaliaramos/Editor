@@ -25,7 +25,7 @@ export default class EditorComponent extends Component {
                 className="Editor-titleInput"
                 type="text"
                 name="titleInput"
-                placeholder={currentDocument.name}
+                placeholder="document title"
                 value={this.state.name || ""}
                 onChange={event => {
                   this.setState({ name: event.target.value });
@@ -51,7 +51,7 @@ export default class EditorComponent extends Component {
             <textarea
               className="Editor-bodyInput"
               name="bodyInput"
-              placeholder={currentDocument.content}
+              placeholder="enter content"
               value={this.state.content || ""}
               onChange={event => {
                 this.setState({ content: event.target.value });
@@ -70,8 +70,8 @@ export default class EditorComponent extends Component {
   //handle submit will take the information and
   _handleSubmit = event => {
     event.preventDefault();
-    let user = localStorage.getItem("name")
-    console.log(user, 'user');
+    let user = localStorage.getItem("name");
+    console.log(user, "user");
     let content = this.state.content;
 
     let docInfo = {
