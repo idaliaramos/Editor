@@ -35,7 +35,10 @@ class App extends Component {
           var doc = documents[documentName];
           doc["name"] = documentName;
           listOfDocs.push(doc);
-          this.setState({ documents: listOfDocs });
+          this.setState({
+            documents: listOfDocs,
+            currentDocument: listOfDocs[0]
+          });
         }
       })
     );
