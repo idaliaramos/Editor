@@ -73,15 +73,20 @@ export default class EditorComponent extends Component {
     // let user = localStorage.getItem("name");
     let user = "idalia";
     let content = this.state.content;
-    console.log(this.state.content, "this state body");
+
     let docInfo = {
       issuer: user,
       content: content
     };
-    console.log(docInfo, "docInfo");
+    return fetch(`https://aachallengeone.now.sh/update/${this.state.name}`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(docInfo)
+    }).then(response => response.json());
     //onSave will call the api with the info
     // onSave(docInfo);
-
   };
 
   //will update the state with the currentDocument selected
