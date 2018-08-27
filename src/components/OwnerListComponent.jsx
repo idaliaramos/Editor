@@ -3,7 +3,7 @@ import { List, Image } from "semantic-ui-react";
 import image from "../images/teacher.png";
 const OwnerListComponent = props => {
   let { currentDocument } = props;
-
+  console.log(currentDocument, "currentDocument");
   return (
     <div>
       {currentDocument.owners.map((owner, i) => {

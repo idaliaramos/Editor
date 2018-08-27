@@ -3,6 +3,7 @@ import { List, Segment } from "semantic-ui-react";
 
 const DocumentItem = props => {
   const handleClickItem = () => {
+    console.log(props.document.name, "docname");
     props.updateCurrentDoc(props.document.name);
   };
   return (
