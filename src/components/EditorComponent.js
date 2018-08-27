@@ -6,14 +6,16 @@ import image from "../images/teacher.png";
 export default class EditorComponent extends Component {
   constructor(props) {
     super(props);
+    const { currentDocument } = this.props;
     this.state = {
-      title: "",
-      body: ""
+      title: currentDocument.name,
+      body: currentDocument.content
     };
   }
 
   render() {
     let { document, currentDocument } = this.props;
+    console.log(this.state, "state");
     return (
       <div>
         <form className="Editor" onSubmit={this._handleSubmit}>
@@ -80,4 +82,17 @@ export default class EditorComponent extends Component {
     //onSave will call the api with the info
     // onSave(docInfo);
   };
+
+  componentWillReceiveProps(nextProps) {
+    console.log(nextProps, "nextProps");
+    if (
+      nextProps.currentDocument &&
+      nextProps.currentDocument.name !== this.props.currentDocument.name
+    ) {
+      this.setState({
+        title: nextProps.currentDocument.name,
+        body: nextProps.currentDocument.content
+      });
+    }
+  }
 }
