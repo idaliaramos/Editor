@@ -70,8 +70,8 @@ export default class EditorComponent extends Component {
   //handle submit will take the information and
   _handleSubmit = event => {
     event.preventDefault();
-    // let user = localStorage.getItem("name");
-    let user = "idalia";
+    let user = localStorage.getItem("name")
+    console.log(user, 'user');
     let content = this.state.content;
 
     let docInfo = {
@@ -81,7 +81,7 @@ export default class EditorComponent extends Component {
     return fetch(`https://aachallengeone.now.sh/update/${this.state.name}`, {
       method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify(docInfo)
     }).then(response => response.json());
