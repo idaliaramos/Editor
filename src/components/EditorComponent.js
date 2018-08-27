@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { List, Image } from "semantic-ui-react";
 import image from "../images/teacher.png";
+import UserListItem from "./UserListItem";
 //renders the editor, it contains a title input, a body input.
 // on save it will make a post to the api
 export default class EditorComponent extends Component {
   constructor(props) {
     super(props);
-    const { currentDocument } = this.props;
+    let { currentDocument } = this.props;
+    //set the state with the current document values
     this.state = {
       name: currentDocument.name,
       content: currentDocument.content
@@ -14,8 +16,7 @@ export default class EditorComponent extends Component {
   }
 
   render() {
-    let { document, currentDocument } = this.props;
-    console.log(this.state, "state");
+    let { currentDocument } = this.props;
     return (
       <div>
         <form className="Editor" onSubmit={this._handleSubmit}>
@@ -34,16 +35,8 @@ export default class EditorComponent extends Component {
             </div>
             <div className="Changed-by-wrapper">
               <div>Last Changed by:</div>
-              <List horizontal relaxed="very">
-                <List.Item>
-                  <Image avatar src={image} />
-                  <List.Content>
-                    <List.Header as="a">
-                      {currentDocument.lastChangeBy}
-                    </List.Header>
-                  </List.Content>
-                </List.Item>
-              </List>
+
+              <UserListItem name={currentDocument.lastChangeBy} />
             </div>
           </div>
 
@@ -71,11 +64,9 @@ export default class EditorComponent extends Component {
   _handleSubmit = event => {
     event.preventDefault();
     let user = localStorage.getItem("name");
-    console.log(user, "user");
     let content = this.state.content;
-
     let docInfo = {
-      issuer: user,
+      issuer: "idalia",
       content: content
     };
     return fetch(`https://aachallengeone.now.sh/update/${this.state.name}`, {
@@ -85,8 +76,6 @@ export default class EditorComponent extends Component {
       },
       body: JSON.stringify(docInfo)
     }).then(response => response.json());
-    //onSave will call the api with the info
-    // onSave(docInfo);
   };
 
   //will update the state with the currentDocument selected
