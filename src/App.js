@@ -3,7 +3,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import EditorPage from "./components/EditorPage";
-import getDocuments from "./api-calls/getDocuments";
+
 
 class App extends Component {
   state = {
