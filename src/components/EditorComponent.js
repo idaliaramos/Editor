@@ -8,8 +8,8 @@ export default class EditorComponent extends Component {
     super(props);
     const { currentDocument } = this.props;
     this.state = {
-      title: currentDocument.name,
-      body: currentDocument.content
+      name: currentDocument.name,
+      content: currentDocument.content
     };
   }
 
@@ -26,9 +26,9 @@ export default class EditorComponent extends Component {
                 type="text"
                 name="titleInput"
                 placeholder={currentDocument.name}
-                value={this.state.title || ""}
+                value={this.state.name || ""}
                 onChange={event => {
-                  this.setState({ title: event.target.value });
+                  this.setState({ name: event.target.value });
                 }}
               />
             </div>
@@ -52,9 +52,9 @@ export default class EditorComponent extends Component {
               className="Editor-bodyInput"
               name="bodyInput"
               placeholder={currentDocument.content}
-              value={this.state.body || ""}
+              value={this.state.content || ""}
               onChange={event => {
-                this.setState({ body: event.target.value });
+                this.setState({ content: event.target.value });
               }}
             />
           </div>
@@ -72,8 +72,8 @@ export default class EditorComponent extends Component {
     event.preventDefault();
     // let user = localStorage.getItem("name");
     let user = "idalia";
-    let content = this.state.body;
-    console.log(this.state.body, "this state body");
+    let content = this.state.content;
+    console.log(this.state.content, "this state body");
     let docInfo = {
       issuer: user,
       content: content
@@ -81,17 +81,18 @@ export default class EditorComponent extends Component {
     console.log(docInfo, "docInfo");
     //onSave will call the api with the info
     // onSave(docInfo);
+
   };
 
+  //will update the state with the currentDocument selected
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps, "nextProps");
     if (
       nextProps.currentDocument &&
       nextProps.currentDocument.name !== this.props.currentDocument.name
     ) {
       this.setState({
-        title: nextProps.currentDocument.name,
-        body: nextProps.currentDocument.content
+        name: nextProps.currentDocument.name,
+        content: nextProps.currentDocument.content
       });
     }
   }
