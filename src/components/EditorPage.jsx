@@ -6,23 +6,15 @@ import NavBar from "./NavBar";
 //this renders a single document
 export default class EditorPage extends Component {
   state = {
-    documents: [
-      {
-        name: "idalia",
-        owners: ["Looney Toons", "idalia", "jesu", "Nik Safe"],
-        lastChangeBy: "idalia",
-        content: "Bugs Bunny is the jam edited at 3pm changed by me"
-      }
-    ],
+    documents: [],
     currentDocument: {}
   };
 
   componentDidMount = async () => {
-    console.log("in the comp did mount");
-    await this.getDataFromAPI();
+    await this.getDocumentsFromAPI();
   };
 
-  getDataFromAPI = async () => {
+  getDocumentsFromAPI = async () => {
     return fetch("https://aachallengeone.now.sh/read")
       .then(response => response.json())
       .then(documents => {
@@ -40,6 +32,16 @@ export default class EditorPage extends Component {
         }
       });
   };
+  // gets called when user clicks on a document, updates state with current document
+  updateCurrentDoc = selectedName => {
+    console.log(selectedName, "selectedName");
+    //looks in the documents to find document by name
+    let currentDoc = this.state.documents.find(
+      document => document.name === selectedName
+    );
+    this.setState({ currentDocument: currentDoc });
+  };
+
   render() {
     let { documents, currentDocument, updateCurrentDoc } = this.state;
     console.log("this state in editor page", documents);
