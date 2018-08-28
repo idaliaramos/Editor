@@ -105,3 +105,6 @@ input[type="text"] {
   margin-top: 8vw;
   margin: auto;
 }
+.ui.horizontal.very.relaxed.list {
+  padding-right: 15px;
+}
