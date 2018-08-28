@@ -3,9 +3,15 @@ import { Menu } from "semantic-ui-react";
 
 export default class NavBar extends Component {
   render() {
+    let name = localStorage.getItem("name");
     return (
-      <Menu inverted color="blue">
+      <Menu inverted color="blue" >
         <Menu.Item name="AppAcademy Collaboration" />
+        <Menu.Menu position="right">
+          <Menu.Item>
+            <Menu.Item name={`hello ${name}`} />
+          </Menu.Item>
+        </Menu.Menu>
       </Menu>
     );
   }
