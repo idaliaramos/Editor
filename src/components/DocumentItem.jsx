@@ -7,12 +7,13 @@ const DocumentItem = props => {
   };
   return (
     <Segment onClick={handleClickItem} className="Document-Item">
-      <List divided relaxed>
+      <List divided>
         <List.Item>
-          <List.Icon name="github" size="large" verticalAlign="middle" />
           <List.Content>
             <List.Header as="a">{props.document.name}</List.Header>
-            <List.Description as="a">{props.document.content}</List.Description>
+            <List.Description as="a">
+              {props.document.content.substring(0, 25)}
+            </List.Description>
           </List.Content>
         </List.Item>
       </List>
