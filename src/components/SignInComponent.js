@@ -7,7 +7,7 @@ export default class SignInComponent extends Component {
     event.preventDefault();
     localStorage.setItem("name", event.target.value);
   };
-//takes the user to the editor after they have entered their name
+  //takes the user to the editor after they have entered their name
   goToEditor = () => {
     this.props.history.push("/editor");
   };

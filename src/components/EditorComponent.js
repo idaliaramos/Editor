@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { List, Image } from "semantic-ui-react";
+import { List, Image, Confirm } from "semantic-ui-react";
 import image from "../images/teacher.png";
 import UserListItem from "./UserListItem";
 import OwnerListComponent from "./OwnerListComponent";
@@ -13,9 +13,13 @@ export default class EditorComponent extends Component {
     this.state = {
       name: currentDocument.name,
       content: currentDocument.content,
-      show: false
+      show: false,
+      open: false
     };
   }
+  //on show will change to true when user submits an edit
+  show = () => this.setState({ open: true });
+  handleConfirm = () => this.setState({ open: false });
 
   render() {
     let { currentDocument } = this.props;
@@ -67,11 +71,22 @@ export default class EditorComponent extends Component {
             />
           </div>
           <div className="Editor-saveButtonWrapper">
-            <button className="Editor-saveButton" type="submit">
+            <button
+              onClick={this.show}
+              className="Editor-saveButton"
+              type="submit"
+            >
               Done
             </button>
+            <Confirm
+              open={this.state.open}
+              content="Your message was edited!"
+            
+              onConfirm={this.handleConfirm}
+            />
           </div>
         </form>
+        <div />
       </div>
     );
   }
