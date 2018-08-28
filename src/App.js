@@ -4,7 +4,6 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SignInComponent from "./components/SignInComponent";
 import EditorPage from "./components/EditorPage";
-import EditorPageLayout from "./components/EditorPageLayout";
 class App extends Component {
   render() {
     return (
