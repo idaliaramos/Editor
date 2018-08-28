@@ -14,7 +14,7 @@ export default class SignInComponent extends Component {
   //renders a form with a single input field for the name
   render() {
     return (
-      <Segment inverted>
+      <Segment inverted color="blue">
         <Form inverted onChange={this.onSetName} onSubmit={this.goToEditor}>
           <Form.Group widths="equal">
             <Form.Input fluid label="First name" placeholder="First name" />

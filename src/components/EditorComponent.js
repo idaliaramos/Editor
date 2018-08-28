@@ -81,7 +81,6 @@ export default class EditorComponent extends Component {
             <Confirm
               open={this.state.open}
               content="Your message was edited!"
-            
               onConfirm={this.handleConfirm}
             />
           </div>

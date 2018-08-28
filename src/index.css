@@ -93,3 +93,13 @@ input[type="text"] {
 .ui.segment.pushable {
   border: none;
 }
+
+.ui.inverted.segment {
+  width: 80vw;
+  margin: auto;
+  margin-top: 5vw;
+}
+
+.ui.primary.inverted.segment {
+  margin-top: 5vw;
+}
