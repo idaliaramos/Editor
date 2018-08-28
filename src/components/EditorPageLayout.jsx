@@ -11,7 +11,10 @@ export default class EditorPageLayout extends Component {
   //when user clicks it will open the document side bar
   handleButtonClick = () => this.setState({ visible: !this.state.visible });
   // this will close the document side bar
-  handleSidebarHide = () => this.setState({ visible: false });
+  handleSidebarHide = () => {
+    console.log("onHide");
+    this.setState({ visible: false });
+  };
 
   render() {
     const { visible } = this.state;
@@ -38,7 +41,7 @@ export default class EditorPageLayout extends Component {
             as={Menu}
             animation="overlay"
             icon="labeled"
-            onHide={this.handleSidebarHide}
+            // onHide={this.handleSidebarHide}
             vertical
             visible={visible}
             width="thin"
@@ -46,6 +49,7 @@ export default class EditorPageLayout extends Component {
             <DocumentListComponent
               updateCurrentDoc={updateCurrentDoc}
               documents={documents}
+              handleSidebarHide={this.handleSidebarHide}
             />
           </Sidebar>
 

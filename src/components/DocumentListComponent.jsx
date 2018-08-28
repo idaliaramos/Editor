@@ -21,6 +21,7 @@ export default class DocumentListComponent extends Component {
               <DocumentItem
                 document={document}
                 key={document.name}
+                handleSidebarHide={this.props.handleSidebarHide}
                 updateCurrentDoc={this.props.updateCurrentDoc}
               />
             );
