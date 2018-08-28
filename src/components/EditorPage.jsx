@@ -55,8 +55,8 @@ export default class EditorPage extends Component {
             updateCurrentDoc={this.updateCurrentDoc}
           />
           <EditorComponent
-          documents={documents}
-          currentDocument={currentDocument}
+            documents={documents}
+            currentDocument={currentDocument}
           />
         </EditorPageLayout>
       </div>
