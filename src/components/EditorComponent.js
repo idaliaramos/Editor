@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { List, Image, Confirm } from "semantic-ui-react";
-import image from "../images/teacher.png";
+import { Confirm } from "semantic-ui-react";
 import UserListItem from "./UserListItem";
 import OwnerListComponent from "./OwnerListComponent";
 //renders the editor, it contains a title input, a body input.
@@ -32,7 +31,7 @@ export default class EditorComponent extends Component {
                 className="Editor-titleInput"
                 type="text"
                 name="titleInput"
-                placeholder="document title"
+                placeholder="Add a document title"
                 value={this.state.name || ""}
                 onChange={event => {
                   this.setState({ name: event.target.value });
@@ -96,7 +95,7 @@ export default class EditorComponent extends Component {
     let user = localStorage.getItem("name");
     let content = this.state.content;
     let docInfo = {
-      issuer: "idalia",
+      issuer: user,
       content: content
     };
     return fetch(`https://aachallengeone.now.sh/update/${this.state.name}`, {

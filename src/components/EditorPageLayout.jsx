@@ -1,17 +1,7 @@
 import React, { Component } from "react";
-import OwnerListComponent from "./OwnerListComponent";
+// import OwnerListComponent from "./OwnerListComponent";
 import DocumentListComponent from "./DocumentListComponent";
-import {
-  Button,
-  Header,
-  Icon,
-  Image,
-  Menu,
-  Segment,
-  Sidebar,
-  List,
-  Popup
-} from "semantic-ui-react";
+import { Button, Menu, Segment, Sidebar } from "semantic-ui-react";
 
 export default class EditorPageLayout extends Component {
   state = {
@@ -25,7 +15,7 @@ export default class EditorPageLayout extends Component {
 
   render() {
     const { visible } = this.state;
-    const { updateCurrentDoc, currentDocument, documents } = this.props;
+    const { updateCurrentDoc, documents } = this.props;
 
     return (
       <div>
