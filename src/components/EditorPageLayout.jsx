@@ -27,10 +27,7 @@ export default class EditorPageLayout extends Component {
   handleSidebarHide2 = () => this.setState({ visible2: false });
   // this will close the  owner side bar
   handleButtonClick2 = () => this.setState({ visible2: !this.state.visible2 });
-  // updateCurrentDoc = event => {
-  //   console.log(event.target, "EV");
-  //   event.preventDefault();
-  // };
+
   render() {
     const { visible, visible2 } = this.state;
     const { children, updateCurrentDoc, currentDocument } = this.props;

@@ -2,7 +2,6 @@ import React from "react";
 import { List, Image } from "semantic-ui-react";
 import image from "../images/teacher.png";
 const UserListItem = props => {
-  console.log(props.name, "props.name");
   return (
     <List relaxed="very">
       <List.Item>
