@@ -9,7 +9,7 @@ export default class DocumentListComponent extends Component {
   render() {
     //deconstruct the docs off props
     const { documents } = this.props;
-    console.log(this.props, "DOCUMENTS");
+
     return (
       //updateCurrentDoc will be called to set the state with the current doc
       <div className="Document-List">
