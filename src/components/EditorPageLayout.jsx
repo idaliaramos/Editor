@@ -34,6 +34,12 @@ export default class EditorPageLayout extends Component {
             Documents
           </Button>
         </div>
+        <Button
+          icon="add circle"
+          size="huge"
+          color="purple"
+          onClick={this.props.handleCreateClick}
+        />
         <Sidebar.Pushable as={Segment}>
           <Sidebar
             as={Menu}
@@ -44,7 +50,6 @@ export default class EditorPageLayout extends Component {
             visible={visible}
             width="thin"
           >
-            {/* Documents */}
             <DocumentListComponent
               updateCurrentDoc={updateCurrentDoc}
               documents={documents}
@@ -53,7 +58,6 @@ export default class EditorPageLayout extends Component {
 
           <Sidebar.Pusher>
             <Segment basic>
-              {/* <Header as="h3">Application Content</Header> */}
               <div className="EditorPageLayout">
                 <div className="Editor">{this.props.children[1]}</div>
               </div>

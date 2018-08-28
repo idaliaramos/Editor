@@ -40,6 +40,10 @@ export default class EditorPage extends Component {
     );
     this.setState({ currentDocument: currentDoc });
   };
+  //sets editor to create new document
+  handleCreateClick = () => {
+    this.setState({ currentDocument: {} });
+  };
 
   render() {
     let { documents, currentDocument } = this.state;
@@ -49,6 +53,7 @@ export default class EditorPage extends Component {
         <EditorPageLayout
           documents={documents}
           updateCurrentDoc={this.updateCurrentDoc}
+          handleCreateClick={this.handleCreateClick}
         >
           <DocumentListComponent
             documents={documents}
