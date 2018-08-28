@@ -35,9 +35,9 @@ export default class EditorComponent extends Component {
                 }}
               />
             </div>
+            {/* shows last owner that changed the document */}
             <div className="Changed-by-wrapper">
               <div>Last Changed by:</div>
-
               <UserListItem name={currentDocument.lastChangeBy} />
               <div>
                 <div
@@ -47,7 +47,8 @@ export default class EditorComponent extends Component {
                 >
                   Show all owners:
                 </div>
-                {!this.state.show && (
+                {/* shows or hides the owners on click */}
+                {this.state.show && (
                   <OwnerListComponent currentDocument={currentDocument} />
                 )}
               </div>
