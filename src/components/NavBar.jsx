@@ -5,7 +5,7 @@ export default class NavBar extends Component {
   render() {
     let name = localStorage.getItem("name");
     return (
-      <Menu inverted color="blue">
+      <Menu inverted secondary color="blue">
         <Menu.Item name="AppAcademy Collaboration" />
         <Menu.Menu position="right">
           <Menu.Item>
