@@ -41,19 +41,14 @@ export default class EditorComponent extends Component {
               <UserListItem name={currentDocument.lastChangeBy} />
               <div>
                 <div
-                  onMouseEnter={event => {
-                    this.setState({ show: true });
-                  }}
-                  onMouseLeave={() => {
-                    this.setState({ show: false });
+                  onClick={() => {
+                    this.setState({ show: !this.state.show });
                   }}
                 >
                   Show all owners:
                 </div>
-                {this.state.show ? (
+                {!this.state.show && (
                   <OwnerListComponent currentDocument={currentDocument} />
-                ) : (
-                  ""
                 )}
               </div>
             </div>
