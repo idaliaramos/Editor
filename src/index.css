@@ -73,9 +73,7 @@ input[type="text"] {
   display: flex;
   flex-direction: column;
   float: left;
-  max-width: 18%;
   margin: 20px;
-  min-width: 5vw;
 }
 
 .button.ui.button.Button-Right {
