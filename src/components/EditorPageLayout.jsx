@@ -24,7 +24,7 @@ export default class EditorPageLayout extends Component {
   handleSidebarHide = () => this.setState({ visible: false });
 
   render() {
-    const { visible} = this.state;
+    const { visible } = this.state;
     const { updateCurrentDoc, currentDocument, documents } = this.props;
 
     return (

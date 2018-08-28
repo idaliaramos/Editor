@@ -34,7 +34,6 @@ export default class EditorPage extends Component {
   };
   // gets called when user clicks on a document, updates state with current document
   updateCurrentDoc = selectedName => {
-    console.log(selectedName, "selectedName");
     //looks in the documents to find document by name
     let currentDoc = this.state.documents.find(
       document => document.name === selectedName
@@ -43,21 +42,21 @@ export default class EditorPage extends Component {
   };
 
   render() {
-    let { documents, currentDocument, updateCurrentDoc } = this.state;
-    console.log("this state in editor page", documents);
-
+    let { documents, currentDocument } = this.state;
     return (
       <div className="Editor-Page">
         <NavBar />
         <EditorPageLayout
           documents={documents}
-          updateCurrentDoc={updateCurrentDoc}
-          currentDocument={currentDocument}
+          updateCurrentDoc={this.updateCurrentDoc}
         >
-          <DocumentListComponent documents={documents} />
-          <EditorComponent
+          <DocumentListComponent
             documents={documents}
-            currentDocument={currentDocument}
+            updateCurrentDoc={this.updateCurrentDoc}
+          />
+          <EditorComponent
+          documents={documents}
+          currentDocument={currentDocument}
           />
         </EditorPageLayout>
       </div>
