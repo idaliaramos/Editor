@@ -37,21 +37,7 @@ export default class EditorPageLayout extends Component {
           <Button className="Button-Right" onClick={this.handleButtonClick}>
             Documents
           </Button>
-          {/* <Popup
-            trigger={
-              <Button
-                className="Button-Left"
-                icon
-                size="large"
-                onClick={this.handleButtonClick2}
-              >
-                <Icon name="group" />
-              </Button>
-            }
-            content="Show all owners"
-            on="click"
-            on="hover"
-          /> */}
+
         </div>
         <Sidebar.Pushable as={Segment}>
           <Sidebar
@@ -70,19 +56,7 @@ export default class EditorPageLayout extends Component {
             />
           </Sidebar>
 
-          {/* <Sidebar
-            as={Menu}
-            animation="overlay"
-            icon="labeled"
-            inverted
-            onHide={this.handleSidebarHide2}
-            vertical
-            visible={visible2}
-            width="thin"
-            onClick={this.updateCurrentDoc}
-          >
-            <OwnerListComponent currentDocument={currentDocument} />
-          </Sidebar> */}
+
 
           <Sidebar.Pusher>
             <Segment basic>
