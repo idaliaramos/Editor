@@ -21,7 +21,7 @@ export default class EditorComponent extends Component {
       <div>
         <form className="Editor" onSubmit={this._handleSubmit}>
           <div className="Editor-titleInputWrapper">
-            <div>
+            <div className="Editor-titleInput">
               <input
                 className="Editor-titleInput"
                 type="text"
