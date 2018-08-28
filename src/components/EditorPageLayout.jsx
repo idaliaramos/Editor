@@ -30,16 +30,19 @@ export default class EditorPageLayout extends Component {
     return (
       <div>
         <div className="Content-Buttons">
+          <Button
+            className="Button-Right"
+            circular
+            icon="add"
+            size="large"
+            color="black"
+            onClick={this.props.handleCreateClick}
+          />
           <Button className="Button-Right" onClick={this.handleButtonClick}>
             Documents
           </Button>
         </div>
-        <Button
-          icon="add circle"
-          size="huge"
-          color="purple"
-          onClick={this.props.handleCreateClick}
-        />
+
         <Sidebar.Pushable as={Segment}>
           <Sidebar
             as={Menu}
