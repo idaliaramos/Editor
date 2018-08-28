@@ -40,7 +40,7 @@ export default class EditorPage extends Component {
     );
     this.setState({ currentDocument: currentDoc });
   };
-  //sets editor to create new document
+  //clears the current document so user can create a new doc
   handleCreateClick = () => {
     this.setState({ currentDocument: {} });
   };
@@ -52,17 +52,14 @@ export default class EditorPage extends Component {
         <NavBar />
         <EditorPageLayout
           documents={documents}
-          updateCurrentDoc={this.updateCurrentDoc}
           handleCreateClick={this.handleCreateClick}
+          updateCurrentDoc={this.updateCurrentDoc}
         >
           <DocumentListComponent
             documents={documents}
             updateCurrentDoc={this.updateCurrentDoc}
           />
-          <EditorComponent
-            documents={documents}
-            currentDocument={currentDocument}
-          />
+          <EditorComponent currentDocument={currentDocument} />
         </EditorPageLayout>
       </div>
     );
