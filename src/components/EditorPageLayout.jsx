@@ -15,29 +15,24 @@ import {
 
 export default class EditorPageLayout extends Component {
   state = {
-    visible: false,
-    visible2: false,
-    currentMessage: {}
+    visible: false
   };
+
   //when user clicks it will open the document side bar
   handleButtonClick = () => this.setState({ visible: !this.state.visible });
   // this will close the document side bar
   handleSidebarHide = () => this.setState({ visible: false });
-  // when user clicks it will open the owners side bar
-  handleSidebarHide2 = () => this.setState({ visible2: false });
-  // this will close the  owner side bar
-  handleButtonClick2 = () => this.setState({ visible2: !this.state.visible2 });
 
   render() {
-    const { visible, visible2 } = this.state;
-    const { children, updateCurrentDoc, currentDocument } = this.props;
+    const { visible} = this.state;
+    const { updateCurrentDoc, currentDocument, documents } = this.props;
+
     return (
       <div>
         <div className="Content-Buttons">
           <Button className="Button-Right" onClick={this.handleButtonClick}>
             Documents
           </Button>
-
         </div>
         <Sidebar.Pushable as={Segment}>
           <Sidebar
@@ -52,18 +47,15 @@ export default class EditorPageLayout extends Component {
             {/* Documents */}
             <DocumentListComponent
               updateCurrentDoc={updateCurrentDoc}
-              documents={this.props.documents}
+              documents={documents}
             />
           </Sidebar>
-
-
 
           <Sidebar.Pusher>
             <Segment basic>
               {/* <Header as="h3">Application Content</Header> */}
               <div className="EditorPageLayout">
-                {/* <div className="EditorPageLayout-sideBar">{children[0]}</div> */}
-                <div className="Editor">{children[1]}</div>
+                <div className="Editor">{this.props.children[1]}</div>
               </div>
             </Segment>
           </Sidebar.Pusher>
