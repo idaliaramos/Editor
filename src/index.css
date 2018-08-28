@@ -97,9 +97,9 @@ input[type="text"] {
 .ui.inverted.segment {
   width: 80vw;
   margin: auto;
-  margin-top: 5vw;
 }
 
-.ui.primary.inverted.segment {
-  margin-top: 5vw;
+.Sign-In-Component {
+  margin-top: 8vw;
+  margin: auto;
 }
