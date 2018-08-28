@@ -69,7 +69,8 @@ input[type="text"] {
 }
 
 .Content-Buttons {
-  display: inline;
+  display: flex;
+  flex-direction: column;
   float: left;
   max-width: 18%;
   margin: 20px;

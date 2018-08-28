@@ -48,6 +48,7 @@ export default class EditorComponent extends Component {
                   onClick={() => {
                     this.setState({ show: !this.state.show });
                   }}
+                  style={{ textDecoration: "underline" }}
                 >
                   Show all owners:
                 </div>
