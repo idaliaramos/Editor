@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { List, Image } from "semantic-ui-react";
 import image from "../images/teacher.png";
 import UserListItem from "./UserListItem";
+import OwnerListComponent from "./OwnerListComponent";
 //renders the editor, it contains a title input, a body input.
 // on save it will make a post to the api
 export default class EditorComponent extends Component {
@@ -11,7 +12,8 @@ export default class EditorComponent extends Component {
     //set the state with the current document values
     this.state = {
       name: currentDocument.name,
-      content: currentDocument.content
+      content: currentDocument.content,
+      show: false
     };
   }
 
@@ -37,9 +39,26 @@ export default class EditorComponent extends Component {
               <div>Last Changed by:</div>
 
               <UserListItem name={currentDocument.lastChangeBy} />
+              <div>
+                <div
+                  onMouseEnter={event => {
+                    this.setState({ show: true });
+                  }}
+                  onMouseLeave={() => {
+                    this.setState({ show: false });
+                  }}
+                >
+                  Show all owners:
+                </div>
+                {this.state.show ? (
+                  <OwnerListComponent currentDocument={currentDocument} />
+                ) : (
+                  ""
+                )}
+              </div>
             </div>
           </div>
-
+          <div />
           <div className="Editor-bodyInputWrapper">
             <textarea
               className="Editor-bodyInput"

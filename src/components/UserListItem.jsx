@@ -3,7 +3,7 @@ import { List, Image } from "semantic-ui-react";
 import image from "../images/teacher.png";
 const UserListItem = props => {
   return (
-    <List relaxed="very">
+    <List horizontal relaxed="very">
       <List.Item>
         <Image avatar src={image} />
         <List.Content>
