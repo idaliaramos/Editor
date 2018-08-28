@@ -21,7 +21,7 @@ export default class EditorPage extends Component {
         let listOfDocs = [];
         //iterate through the object to push the object with the name of the doc
         //inside the object
-        for (let documentName of Object.keys(documents)) {
+        for (let documentName in documents) {
           var doc = documents[documentName];
           doc["name"] = documentName;
           listOfDocs.push(doc);
