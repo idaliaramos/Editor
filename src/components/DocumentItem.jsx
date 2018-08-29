@@ -1,6 +1,6 @@
 import React from "react";
 import { List, Segment } from "semantic-ui-react";
-
+import PropTypes from "prop-types";
 const DocumentItem = props => {
   //sets the currentDocument to the one clicked and closes the side bar
   const handleClickItem = () => {
@@ -22,5 +22,7 @@ const DocumentItem = props => {
     </Segment>
   );
 };
-
+DocumentItem.propTypes = {
+  document: PropTypes.object
+};
 export default DocumentItem;

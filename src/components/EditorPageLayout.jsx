@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 // import OwnerListComponent from "./OwnerListComponent";
 import DocumentListComponent from "./DocumentListComponent";
 import { Button, Menu, Segment, Sidebar } from "semantic-ui-react";
@@ -63,3 +64,8 @@ export default class EditorPageLayout extends Component {
     );
   }
 }
+
+EditorPageLayout.propTypes = {
+  documents: PropTypes.array,
+  updateCurrentDoc: PropTypes.func
+};

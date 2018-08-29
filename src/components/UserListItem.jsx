@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { List, Image } from "semantic-ui-react";
 import image from "../images/teacher.png";
 const UserListItem = props => {
@@ -12,5 +13,8 @@ const UserListItem = props => {
       </List.Item>
     </List>
   );
+};
+UserListItem.propTypes = {
+  name: PropTypes.string
 };
 export default UserListItem;

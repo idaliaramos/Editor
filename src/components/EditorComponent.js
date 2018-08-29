@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { Confirm } from "semantic-ui-react";
 import UserListItem from "./UserListItem";
 import OwnerListComponent from "./OwnerListComponent";
@@ -121,3 +122,7 @@ export default class EditorComponent extends Component {
     }
   }
 }
+
+EditorComponent.propTypes = {
+  currentDocument: PropTypes.object
+};

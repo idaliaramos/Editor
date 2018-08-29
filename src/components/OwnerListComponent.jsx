@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import UserListItem from "./UserListItem";
 import { Popup, List, Item } from "semantic-ui-react";
 // renders a list of owners on hover
@@ -27,5 +28,7 @@ const OwnerListComponent = props => {
     </Popup>
   );
 };
-
+OwnerListComponent.propTypes = {
+  currentDocument: PropTypes.object
+};
 export default OwnerListComponent;

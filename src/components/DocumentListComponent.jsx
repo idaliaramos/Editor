@@ -1,11 +1,8 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import DocumentItem from "./DocumentItem";
 //this renders all of the documents
 export default class DocumentListComponent extends Component {
-  // static defaultProps = {
-  //   documents: {}
-  // };
-
   render() {
     //deconstruct the docs off props
     const { documents } = this.props;
@@ -31,3 +28,6 @@ export default class DocumentListComponent extends Component {
     );
   }
 }
+DocumentListComponent.propTypes = {
+  documents: PropTypes.object
+};
