@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // import OwnerListComponent from "./OwnerListComponent";
 import DocumentListComponent from "./DocumentListComponent";
 import { Button, Menu, Segment, Sidebar } from "semantic-ui-react";
-
+//this is the wrapper for the editor page, allows for documentList panel to show on top of the editor
 export default class EditorPageLayout extends Component {
   state = {
     visible: false
@@ -12,7 +12,6 @@ export default class EditorPageLayout extends Component {
   handleButtonClick = () => this.setState({ visible: !this.state.visible });
   // this will close the document side bar
   handleSidebarHide = () => {
-    console.log("onHide");
     this.setState({ visible: false });
   };
 
@@ -41,7 +40,6 @@ export default class EditorPageLayout extends Component {
             as={Menu}
             animation="overlay"
             icon="labeled"
-            // onHide={this.handleSidebarHide}
             vertical
             visible={visible}
             width="thin"
