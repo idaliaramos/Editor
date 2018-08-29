@@ -10,7 +10,7 @@ const OwnerListComponent = props => {
         <Item style={{ textDecoration: "underline" }}>Show All Owners</Item>
       }
       verticalOffset={5}
-      position="bottom center"
+      position="bottom right "
       hoverable
     >
       <List selection verticalAlign="middle">
