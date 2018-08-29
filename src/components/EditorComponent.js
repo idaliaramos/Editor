@@ -84,7 +84,6 @@ export default class EditorComponent extends Component {
     );
   }
 
-
   _handleSubmit = async event => {
     event.preventDefault();
     let user = localStorage.getItem("name");
