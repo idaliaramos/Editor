@@ -1,7 +1,7 @@
 import React from "react";
 import UserListItem from "./UserListItem";
-import { Header, Button, Popup, List, Image, Item } from "semantic-ui-react";
-
+import { Popup, List, Item } from "semantic-ui-react";
+// renders a list of owners on hover
 const OwnerListComponent = props => {
   let { currentDocument } = props;
   return (
