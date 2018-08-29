@@ -8,9 +8,9 @@ This is a front end application that allows users to create documents, be able t
 * Semantic UI
 * Custom CSS Styling
 
-## You can checkout out the video demo!
+## Layout
 
-https://youtu.be/WHEZ7_zwioc
+
 
 ## Getting Started
 
