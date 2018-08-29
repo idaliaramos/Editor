@@ -5,6 +5,7 @@ import { Popup, List, Item } from "semantic-ui-react";
 const OwnerListComponent = props => {
   let { currentDocument } = props;
   return (
+    //a popup for the owners list
     <Popup
       trigger={
         <Item style={{ textDecoration: "underline" }}>Show All Owners</Item>
@@ -13,7 +14,7 @@ const OwnerListComponent = props => {
       position="bottom right"
       hoverable
     >
-      {/* If there are owners if will show list, if not show 'no owners yet' */}
+      {/* If there are owners it will show list, if not show 'no owners yet' */}
       <List selection verticalAlign="middle">
         <div>
           {!currentDocument.owners && `no owners yet`}
