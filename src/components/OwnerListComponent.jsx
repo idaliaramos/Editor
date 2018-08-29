@@ -7,7 +7,7 @@ const PopupExampleFlowing = props => {
   return (
     <Popup
       trigger={
-        <Item style={{ textDecoration: 'underline' }}>Show All Owners</Item>
+        <Item style={{ textDecoration: "underline" }}>Show All Owners</Item>
       }
       verticalOffset={5}
       position="bottom center"
