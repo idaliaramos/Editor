@@ -26,8 +26,7 @@ export default class EditorPage extends Component {
           doc["name"] = documentName;
           listOfDocs.push(doc);
           this.setState({
-            documents: listOfDocs,
-            currentDocument: listOfDocs[0]
+            documents: listOfDocs
           });
         }
       });
