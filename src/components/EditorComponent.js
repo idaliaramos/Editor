@@ -100,7 +100,7 @@ export default class EditorComponent extends Component {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify(docInfo )
+          body: JSON.stringify(docInfo)
         }
       );
     } catch (e) {
