@@ -15,6 +15,7 @@ const OwnerListComponent = props => {
     >
       <List selection verticalAlign="middle">
         <div>
+          {!currentDocument.owners && `no owners yet`}
           {currentDocument.owners &&
             currentDocument.owners.map((owner, i) => {
               return <UserListItem name={owner} />;
