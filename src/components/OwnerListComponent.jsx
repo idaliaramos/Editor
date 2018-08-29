@@ -10,9 +10,10 @@ const OwnerListComponent = props => {
         <Item style={{ textDecoration: "underline" }}>Show All Owners</Item>
       }
       verticalOffset={5}
-      position="bottom right "
+      position="bottom right"
       hoverable
     >
+      {/* If there are owners if will show list, if not show 'no owners yet' */}
       <List selection verticalAlign="middle">
         <div>
           {!currentDocument.owners && `no owners yet`}
