@@ -13,7 +13,8 @@ export default class EditorComponent extends Component {
       name: currentDocument.name,
       content: currentDocument.content,
       show: false,
-      open: false
+      open: false,
+      isSuccessful: true
     };
   }
   //on show will change to true when user submits an edit
@@ -69,7 +70,11 @@ export default class EditorComponent extends Component {
             </button>
             <Confirm
               open={this.state.open}
-              content="Your message was edited!"
+              content={
+                this.state.isSuccessful
+                  ? "Your message was edited!"
+                  : "Action failed, try again."
+              }
               onConfirm={this.handleConfirm}
             />
           </div>
@@ -79,7 +84,26 @@ export default class EditorComponent extends Component {
     );
   }
   //handle submit will take the information and
-  _handleSubmit = event => {
+  // _handleSubmit = event => {
+  //   event.preventDefault();
+  //   let user = localStorage.getItem("name");
+  //   let content = this.state.content;
+  //   let docInfo = {
+  //     issuer: user,
+  //     content: content
+  //   };
+  //   return fetch(`https://aachallengeone.now.sh/update/${this.state.name}`, {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify(docInfo)
+  //   }).then(response => response.json()).catch(err => {
+  //   this.setState({isSuccessful: false})
+  //   });
+  // };
+
+  _handleSubmit = async event => {
     event.preventDefault();
     let user = localStorage.getItem("name");
     let content = this.state.content;
@@ -87,13 +111,20 @@ export default class EditorComponent extends Component {
       issuer: user,
       content: content
     };
-    return fetch(`https://aachallengeone.now.sh/update/${this.state.name}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(docInfo)
-    }).then(response => response.json());
+    try {
+      const response = await fetch(
+        `https://aachallengeone.now.sh/update/${this.state.name}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ docInfo })
+        }
+      );
+    } catch (e) {
+      this.setState({ isSuccessful: false });
+    }
   };
 
   //will update the state with the currentDocument selected
