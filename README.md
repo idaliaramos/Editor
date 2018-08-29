@@ -37,6 +37,6 @@ We dont have a user image/avatar yet, but I thought that could be a fun future i
 
 ###### Development Decisions
 
-For this project I used React.js and Semantic UI, with some custom css. I was contemplating wether to use Semantic UI or just roll my own css components. I got the impression that it was important for my prospective team to know I have CSS chops, but there is also a time constraint on my part. I decided to use Semantic UI framework because its unnecessary to repeat work that has already been done before, and also made a custom component, added custom css and made the layout responsive to show my css chops.By combining these two methods I hope to show my skills using a framework, and also my own css skills to the team.
+For this project I used React.js and Semantic UI, with some custom css. I was contemplating wether to use Semantic UI or just develop my own css components. I got the impression that it was important for my prospective team to know I have CSS skills, but there is also a time constraint on my part. I decided to use Semantic UI framework because its unnecessary to repeat work that has already been done before, and also made a custom component, added custom CSS and made the layout responsive to show my CSS skills.By combining these two methods I hope to show my skills using a framework, and also my own CSS skills to the team.
 
 # Thank You
