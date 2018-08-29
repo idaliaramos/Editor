@@ -2,7 +2,7 @@ import React from "react";
 import UserListItem from "./UserListItem";
 import { Header, Button, Popup, List, Image, Item } from "semantic-ui-react";
 
-const PopupExampleFlowing = props => {
+const OwnerListComponent = props => {
   let { currentDocument } = props;
   return (
     <Popup
@@ -25,4 +25,4 @@ const PopupExampleFlowing = props => {
   );
 };
 
-export default PopupExampleFlowing;
+export default OwnerListComponent;
