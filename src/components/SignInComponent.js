@@ -14,7 +14,7 @@ export default class SignInComponent extends Component {
   //renders a form with a single input field for the name
   render() {
     return (
-      <div className="Sign-In-Component">
+      <div className="Sign-In-Component" style={{ marginTop: "6vw" }}>
         <Container inverted>
           <Header as="h2">Sign in to Edit Documents</Header>
           <Segment inverted color="blue">
