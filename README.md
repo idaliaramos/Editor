@@ -1,16 +1,12 @@
 # Text Editor Challenge
 
-This is a front end application that allows users to create documents, be able to read all documents, and edit each document.
+This is a front-end application that allows users to create documents, read all documents, and edit each document.
 
 ## Front-end built with:
 
 * React.js
 * Semantic UI
 * Custom CSS Styling
-
-## Layout
-
-
 
 ## Getting Started
 
@@ -23,7 +19,6 @@ These instructions will get you a copy of the project up and running on your loc
 git clone https://github.com/idaliaramos/TextEditor.git
 # install dependencies
 npm install
-
 # starts the server
 npm start
 ```
