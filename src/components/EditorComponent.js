@@ -43,18 +43,7 @@ export default class EditorComponent extends Component {
               <div>Last Changed by:</div>
               <UserListItem name={currentDocument.lastChangeBy} />
               <div>
-                <div
-                  onClick={() => {
-                    this.setState({ show: !this.state.show });
-                  }}
-                  style={{ textDecoration: "underline" }}
-                >
-                  Show all owners:
-                </div>
-                {/* shows or hides the owners on click */}
-                {this.state.show && (
-                  <OwnerListComponent currentDocument={currentDocument} />
-                )}
+                <OwnerListComponent currentDocument={currentDocument} />
               </div>
             </div>
           </div>
