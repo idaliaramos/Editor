@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import DocumentListComponent from "./DocumentListComponent";
+import getDocumentsFromAPI from "../apiCalls/getDocuments";
 import { Button, Menu, Segment, Sidebar } from "semantic-ui-react";
 //this is the wrapper for the editor page, allows for documentList panel to show on top of the editor
 export default class EditorPageLayout extends Component {
@@ -11,14 +12,8 @@ export default class EditorPageLayout extends Component {
   //when user clicks it will open the document side bar
   handleButtonClick = async event => {
     try {
-      const response = await fetch("https://aachallengeone.now.sh/read");
-      const docs = await response.json();
-      let listOfDocs = [];
-      for (let documentName in docs) {
-        var doc = docs[documentName];
-        doc["name"] = documentName;
-        listOfDocs.push(doc);
-      }
+      const listOfDocs = await getDocumentsFromAPI();
+      console.log(listOfDocs, "list of docs pl");
       this.props.updateDocumentBar(listOfDocs);
     } catch (e) {
       console.log(e);

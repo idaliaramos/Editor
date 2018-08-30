@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DocumentListComponent from "./DocumentListComponent";
 import EditorComponent from "./EditorComponent";
 import EditorPageLayout from "./EditorPageLayout";
+import getDocumentsFromAPI from "../apiCalls/getDocuments";
 import NavBar from "./NavBar";
 //this renders a single document
 export default class EditorPage extends Component {
@@ -11,26 +12,10 @@ export default class EditorPage extends Component {
   };
 
   componentDidMount = async () => {
-    await this.getDocumentsFromAPI();
+    const docs = await getDocumentsFromAPI();
+    this.setState({ documents: docs });
   };
 
-  getDocumentsFromAPI = async () => {
-    return fetch("https://aachallengeone.now.sh/read")
-      .then(response => response.json())
-      .then(documents => {
-        let listOfDocs = [];
-        //iterate through the object to push the object with the name of the doc
-        //inside the object
-        for (let documentName in documents) {
-          var doc = documents[documentName];
-          doc["name"] = documentName;
-          listOfDocs.push(doc);
-          this.setState({
-            documents: listOfDocs
-          });
-        }
-      });
-  };
   // gets called when user clicks on a document, updates state with current document
   updateCurrentDoc = selectedName => {
     //looks in the documents to find document by name
@@ -41,11 +26,9 @@ export default class EditorPage extends Component {
   };
   //clears the current document so user can create a new doc
   handleCreateClick = () => {
-    console.log("create message before", this.state.currentDocument);
     this.setState({
       currentDocument: { owners: "", lastChangeBy: "", content: [], name: "" }
     });
-    console.log(this.state.currentDocument, "currentdoc");
   };
   updateDocumentBar = docs => {
     this.setState({ documents: docs });
