@@ -13,7 +13,6 @@ export default class EditorPageLayout extends Component {
   handleButtonClick = async event => {
     try {
       const listOfDocs = await getDocumentsFromAPI();
-      console.log(listOfDocs, "list of docs pl");
       this.props.updateDocumentBar(listOfDocs);
     } catch (e) {
       console.log(e);

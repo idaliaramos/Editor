@@ -25,10 +25,12 @@ export default class EditorPage extends Component {
     this.setState({ currentDocument: currentDoc });
   };
   //clears the current document so user can create a new doc
-  handleCreateClick = () => {
+  handleCreateClick = event => {
+    event.preventDefault();
     this.setState({
       currentDocument: { owners: "", lastChangeBy: "", content: [], name: "" }
     });
+    console.log(this.state.currentDocument, "current");
   };
   updateDocumentBar = docs => {
     this.setState({ documents: docs });

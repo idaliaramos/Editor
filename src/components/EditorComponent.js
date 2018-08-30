@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Confirm } from "semantic-ui-react";
 import UserListItem from "./UserListItem";
 import OwnerListComponent from "./OwnerListComponent";
+import postDocument from "../apiCalls/postDocument";
 //renders the editor, it contains a title input, a body input.
 // on save it will make a post to the api
 export default class EditorComponent extends Component {
@@ -93,17 +94,9 @@ export default class EditorComponent extends Component {
       issuer: user,
       content: content
     };
+    let documentName = this.state.name;
     try {
-      const response = await fetch(
-        `https://aachallengeone.now.sh/update/${this.state.name}`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(docInfo)
-        }
-      );
+      postDocument(documentName, docInfo);
     } catch (e) {
       this.setState({ isSuccessful: false });
     }
