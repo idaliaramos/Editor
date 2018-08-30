@@ -41,7 +41,14 @@ export default class EditorPage extends Component {
   };
   //clears the current document so user can create a new doc
   handleCreateClick = () => {
-    this.setState({ currentDocument: {} });
+    console.log("create message before", this.state.currentDocument);
+    this.setState({
+      currentDocument: { owners: "", lastChangeBy: "", content: [], name: "" }
+    });
+    console.log(this.state.currentDocument, "currentdoc");
+  };
+  updateDocumentBar = docs => {
+    this.setState({ documents: docs });
   };
 
   render() {
@@ -50,6 +57,7 @@ export default class EditorPage extends Component {
       <div className="Editor-Page">
         <NavBar />
         <EditorPageLayout
+          updateDocumentBar={this.updateDocumentBar}
           documents={documents}
           handleCreateClick={this.handleCreateClick}
           updateCurrentDoc={this.updateCurrentDoc}

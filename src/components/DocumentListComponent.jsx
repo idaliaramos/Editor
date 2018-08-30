@@ -29,5 +29,5 @@ export default class DocumentListComponent extends Component {
   }
 }
 DocumentListComponent.propTypes = {
-  documents: PropTypes.object
+  documents: PropTypes.array
 };
