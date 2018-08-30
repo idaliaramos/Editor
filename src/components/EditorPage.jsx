@@ -30,7 +30,6 @@ export default class EditorPage extends Component {
     this.setState({
       currentDocument: { owners: "", lastChangeBy: "", content: [], name: "" }
     });
-    console.log(this.state.currentDocument, "current");
   };
   updateDocumentBar = docs => {
     this.setState({ documents: docs });
