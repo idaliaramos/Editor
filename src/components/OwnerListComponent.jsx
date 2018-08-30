@@ -21,7 +21,7 @@ const OwnerListComponent = props => {
           {!currentDocument.owners && `no owners yet`}
           {currentDocument.owners &&
             currentDocument.owners.map((owner, i) => {
-              return <UserListItem name={owner} />;
+              return <UserListItem name={owner} key={i} />;
             })}
         </div>
       </List>
