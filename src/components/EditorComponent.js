@@ -23,6 +23,26 @@ export default class EditorComponent extends Component {
   show = () => this.setState({ open: true });
   //handleConfirm allows user to exit popup
   handleConfirm = () => this.setState({ open: false });
+  //will take user + doc info to make a post request, will set state with success or fail
+  _handleSubmit = async event => {
+    event.preventDefault();
+    let user = localStorage.getItem("name");
+    let content = this.state.content;
+    let docInfo = {
+      issuer: user,
+      content: content
+    };
+    let documentName = this.state.name;
+    try {
+      let response = await postDocument(documentName, docInfo);
+      if (response.status !== 200) {
+        throw Error;
+      }
+      this.setState({ isSuccessful: true });
+    } catch (e) {
+      this.setState({ isSuccessful: false });
+    }
+  };
 
   render() {
     let { currentDocument } = this.props;
@@ -82,27 +102,6 @@ export default class EditorComponent extends Component {
       </div>
     );
   }
-
-  _handleSubmit = async event => {
-    event.preventDefault();
-    let user = localStorage.getItem("name");
-    let content = this.state.content;
-    let docInfo = {
-      issuer: user,
-      content: content
-    };
-    let documentName = this.state.name;
-    try {
-      let response = await postDocument(documentName, docInfo);
-      if (response.status !== 200) {
-        throw Error;
-      }
-
-      this.setState({ isSuccessful: true });
-    } catch (e) {
-      this.setState({ isSuccessful: false });
-    }
-  };
 
   //will update the state with the currentDocument selected
   componentWillReceiveProps(nextProps) {
