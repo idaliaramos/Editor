@@ -1,6 +1,6 @@
 # Text Editor Challenge
 
-This is a front-end application that allows users to create, read and edit documents.
+This is a front-end application that allows users to create, read and edit documents. You can checkout the live site here: [https://texteditor.surge.sh/](https://texteditor.surge.sh/)
 
 ## Front-end built with:
 
