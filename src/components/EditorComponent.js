@@ -19,8 +19,9 @@ export default class EditorComponent extends Component {
       isSuccessful: true
     };
   }
-  //on show will change to true when user submits an edit
+  //on show will change to true when user submits document
   show = () => this.setState({ open: true });
+  //handleConfirm allows user to exit popup
   handleConfirm = () => this.setState({ open: false });
 
   render() {
@@ -72,11 +73,7 @@ export default class EditorComponent extends Component {
             </button>
             <Confirm
               open={this.state.open}
-              content={
-                this.state.isSuccessful
-                  ? "Your message was edited!"
-                  : "Action failed, try again."
-              }
+              content={this.state.isSuccessful ? "Success!" : "Action failed"}
               onConfirm={this.handleConfirm}
             />
           </div>
@@ -96,7 +93,12 @@ export default class EditorComponent extends Component {
     };
     let documentName = this.state.name;
     try {
-      postDocument(documentName, docInfo);
+      let response = await postDocument(documentName, docInfo);
+      if (response.status !== 200) {
+        throw Error;
+      }
+
+      this.setState({ isSuccessful: true });
     } catch (e) {
       this.setState({ isSuccessful: false });
     }
