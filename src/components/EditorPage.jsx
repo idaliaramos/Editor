@@ -41,9 +41,9 @@ export default class EditorPage extends Component {
       <div className="Editor-Page">
         <NavBar />
         <EditorPageLayout
-          updateDocumentBar={this.updateDocumentBar}
           documents={documents}
           handleCreateClick={this.handleCreateClick}
+          updateDocumentBar={this.updateDocumentBar}
           updateCurrentDoc={this.updateCurrentDoc}
         >
           <DocumentListComponent
